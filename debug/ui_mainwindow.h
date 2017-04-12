@@ -55,7 +55,7 @@ public:
         pic_2->setGeometry(QRect(470, 370, 261, 131));
         display_2 = new QLabel(centralWidget);
         display_2->setObjectName(QStringLiteral("display_2"));
-        display_2->setGeometry(QRect(450, 70, 271, 171));
+        display_2->setGeometry(QRect(460, 60, 271, 171));
         Stitcher = new QPushButton(centralWidget);
         Stitcher->setObjectName(QStringLiteral("Stitcher"));
         Stitcher->setEnabled(false);

@@ -36,7 +36,7 @@ DISTNAME      = ImageSticher1.0.0
 DISTDIR = /home/jason/ImageSticher/debug/.tmp/ImageSticher1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/jason/Softwares/5.7/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/home/jason/Softwares/5.7/gcc_64/lib -lQt5Widgets -L/usr/lib64 -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) `pkg-config opencv --libs` -L/home/jason/Softwares/5.7/gcc_64/lib -lQt5Widgets -L/usr/lib64 -lQt5Gui -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -184,6 +184,7 @@ DIST          = ../../../Softwares/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Softwares/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Softwares/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Softwares/5.7/gcc_64/mkspecs/features/spec_post.prf \
+		../.qmake.stash \
 		../../../Softwares/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Softwares/5.7/gcc_64/mkspecs/features/default_pre.prf \
 		../../../Softwares/5.7/gcc_64/mkspecs/features/resolve_config.prf \
@@ -345,6 +346,7 @@ Makefile: ../ImageSticher.pro ../../Softwares/5.7/gcc_64/mkspecs/features/spec_p
 		../../Softwares/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../Softwares/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Softwares/5.7/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Softwares/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Softwares/5.7/gcc_64/mkspecs/features/default_pre.prf \
 		../../Softwares/5.7/gcc_64/mkspecs/features/resolve_config.prf \
@@ -498,6 +500,7 @@ Makefile: ../ImageSticher.pro ../../Softwares/5.7/gcc_64/mkspecs/features/spec_p
 ../../Softwares/5.7/gcc_64/mkspecs/features/qt_config.prf:
 ../../Softwares/5.7/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../Softwares/5.7/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Softwares/5.7/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../Softwares/5.7/gcc_64/mkspecs/features/default_pre.prf:
 ../../Softwares/5.7/gcc_64/mkspecs/features/resolve_config.prf:
@@ -937,7 +940,47 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../../Softwares/5.7/gcc_64/include/QtWidgets/qlabel.h \
 		../../Softwares/5.7/gcc_64/include/QtWidgets/qframe.h \
 		../../Softwares/5.7/gcc_64/include/QtGui \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../Softwares/5.7/gcc_64/include/QtCore/QVariant \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QAction \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../Softwares/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Softwares/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Softwares/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../Softwares/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Softwares/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../Softwares/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Softwares/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../Softwares/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QMenuBar \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qmenubar.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qmenu.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QStatusBar \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QToolBar \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
+		../../Softwares/5.7/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

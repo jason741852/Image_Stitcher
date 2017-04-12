@@ -28,6 +28,7 @@ namespace Ui {
 class MainWindow;
 }
 
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -35,6 +36,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QString picPath1;
+    QString picPath2;
 
 private slots:
     void on_pic_1_clicked();

@@ -8,6 +8,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+LIBS += `pkg-config opencv --libs`
+
 TARGET = ImageSticher
 TEMPLATE = app
 
